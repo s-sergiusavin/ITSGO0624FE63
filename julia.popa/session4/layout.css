@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  text-align: center;
+  gap: 10px;
+}
+
+.pageContent {
+  display: flex;
+  /* Valoarea default pusa automat */
+  /* flex-direction: row; */
+  gap: 10px;
+  height: 100%;
+}
+
+header {
+  background-color: red;
+  color: white;
+}
+
+nav {
+  background-color: yellow;
+  /* margin: 10px 0; */
+}
+
+aside {
+  background-color: green;
+  flex: 2;
+}
+
+section {
+  background-color: blue;
+  flex: 8;
+}
+
+footer {
+  background-color: orange;
+}
+
+nav.navigationMenu ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav.navigationMenu ul a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 24px;
+}
