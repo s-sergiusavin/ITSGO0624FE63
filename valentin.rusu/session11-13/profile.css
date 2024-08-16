@@ -7,6 +7,14 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+.backImage {
+    width: 3rem;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    background-color: transparent;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
@@ -186,13 +194,12 @@ a {
 
 }
 
-
 @media (min-width: 1017px) {
     .header_wrapper .cols_container .left_col {
         margin: 0;
         margin-right: auto;
 
-    }
+    } 
 
     .header_wrapper .cols_container .right_col nav {
         flex-direction: row;
