@@ -31,3 +31,10 @@
     display: block;
 }
 
+.leftContent .sidebar ul li a:hover,
+.leftContent .sidebar ul li a:active {
+    align-items: center;
+    color: #0c7db1;
+    margin-bottom: 12px;
+    width: 16px;
+}
