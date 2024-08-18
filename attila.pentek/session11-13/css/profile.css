@@ -1,0 +1,94 @@
+* {
+  font-family: "Lato", system-ui;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: #004864;
+}
+
+header .mainSearch {
+  display: flex;
+  align-items: center;
+}
+
+header .mainSearch .logo {
+  padding: 1rem;
+  font-size: 1.7rem;
+  color: rgb(179, 156, 23);
+}
+
+header .mainSearch .logo:hover {
+  color: rgb(226, 194, 14);
+}
+
+header .mainSearch .searchInput {
+  height: 1.7rem;
+  border-radius: 1.5rem;
+  padding: 0 1rem;
+  border-color: beige;
+}
+
+header .mainSearch .searchInput:focus {
+  border: 0.25rem solid rgb(54, 66, 104);
+}
+
+header .mainNavigation .navigation,
+header .links {
+  display: flex;
+}
+
+header .mainNavigation .navigation > li > a {
+  border-radius: 50%;
+  margin: 0 0.35rem;
+  display: flex;
+}
+
+.navIcons {
+  font-size: 1.7rem;
+  color: rgb(179, 156, 23);
+  margin: 0 0.5rem;
+}
+
+.navIcons:hover {
+  color: rgb(245, 215, 47);
+}
+
+.bellIcon {
+  position: relative;
+  display: block;
+}
+
+.bellIcon span {
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.9rem;
+}
