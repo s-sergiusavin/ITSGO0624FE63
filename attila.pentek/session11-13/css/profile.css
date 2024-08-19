@@ -64,6 +64,10 @@ header .links {
   display: flex;
 }
 
+header .mainNavigation .navigation {
+  gap: 4rem;
+}
+
 header .mainNavigation .navigation > li > a {
   border-radius: 50%;
   margin: 0 0.35rem;
@@ -312,7 +316,6 @@ header .mainNavigation .navigation > li > a {
 .right {
   width: 55%;
   height: 100%;
-  background-color: brown;
   border-radius: 0.5rem;
 }
 
@@ -334,8 +337,10 @@ header .mainNavigation .navigation > li > a {
 }
 
 .intro h3 {
+  font-family: monospace;
+  letter-spacing: 0.3rem;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 300;
   color: rgb(198, 198, 198);
 }
@@ -356,4 +361,142 @@ header .mainNavigation .navigation > li > a {
 .intro .detailsListElement {
   font-size: 1.1rem;
   padding: 0.5rem;
+}
+
+.photos {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  background-color: rgba(6, 17, 50, 0.6);
+  box-shadow: 0 1px 3px #bebebe;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.photosHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.photosHeader h2 {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 0;
+}
+
+.photosHeader h2:hover {
+  text-decoration: underline;
+}
+
+.photosHeader h3 {
+  font-size: 1.3rem;
+  color: white;
+  font-weight: 200;
+  cursor: pointer;
+  margin-top: 0;
+}
+
+.photosBody {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.photosLine1,
+.photosLine2,
+.photosLine3 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 30%;
+  gap: 0.5rem;
+}
+
+.photoImg {
+  width: 32%;
+  height: 100%;
+}
+
+.first {
+  border-top-left-radius: 0.5rem;
+}
+
+.third {
+  border-top-right-radius: 0.5rem;
+}
+
+.seventh {
+  border-bottom-left-radius: 0.5rem;
+}
+
+.ninth {
+  border-bottom-right-radius: 0.5rem;
+}
+
+.post {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgba(6, 17, 50, 0.6);
+  box-shadow: 0 1px 3px #bebebe;
+  border-radius: 0.5rem;
+}
+
+.postHeader .profileImage {
+  width: 3.5rem;
+  border-radius: 50%;
+  padding: 0.2rem;
+}
+
+.postHeader {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.postHeader input {
+  height: 2rem;
+  width: 85%;
+  border-radius: 1rem;
+  border: none;
+  padding: 0.5rem;
+}
+
+.post .postButtons {
+  width: 100%;
+}
+
+.post .postList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
+  font-size: 1rem;
+}
+
+.post .postButton {
+  padding: 0.5rem;
+}
+
+.post .postButton:hover {
+  cursor: pointer;
+  background-color: rgb(168, 168, 168);
+  border-radius: 0.5rem;
+}
+
+.post .postList .postIcon {
+  font-size: 1.5rem;
 }
