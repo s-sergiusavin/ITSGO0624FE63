@@ -1,20 +1,9 @@
 
-function myProcces(product, slices) {
-    console.log("Product selected " + product);
-    console.log("Product " + product + " sliced in " + slices);
+function printOutput(output) {
+    console.log(output);
 }
 
-myProcces("Apple", 10)
+printOutput("Catalin");
 
-let myList = {
-    age: 13,
-    name: "Cata"
-}
+const myList = ["Apples", "Bananas", "Ananas", 50, "Car", "Phone"]
 
-myList["Adress"] = "Aleea 1"
-
-let myList2 = [1, 2]
-
-myList2.push(3)
-
-console.log(myList2)
