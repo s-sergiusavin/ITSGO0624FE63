@@ -177,11 +177,3 @@ function logSomething() {
 
 logSomething();
 logSomething();
-
-function testSomething(test = 'Salut') {
-    console.log(`testez ceva ${test}`);
-}
-
-testSomething();
-
-
