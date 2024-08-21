@@ -1,9 +1,5 @@
 
-function printOutput(output) {
-    console.log(output);
-}
+let myName = "Catalin";
 
-printOutput("Catalin");
-
-const myList = ["Apples", "Bananas", "Ananas", 50, "Car", "Phone"]
+const myAge = 27;
 
