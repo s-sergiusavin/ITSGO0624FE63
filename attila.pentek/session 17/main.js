@@ -235,3 +235,38 @@ val1 = 5;
 val2 = "5";
 
 val1 === val2 ? console.log("Egale") : console.log("Diferite");
+
+// Expresie identica cu operatorul ternar
+
+if (val1 === val2) {
+  console.log("Egale");
+} else {
+  console.log("Diferite");
+}
+
+/**
+ * Functions
+ */
+
+// Function declaration: function keyword urmat de numele functiei, paranteze rotunde, paranteze acolade(){}
+
+function logSomething() {
+  console.log("Functia logSomething() a fost apelata");
+}
+
+logSomething();
+
+// Function expression: const + denumirea functiei + = function keyword (){}
+const doSomething = function () {
+  console.log("Do something");
+};
+
+doSomething();
+
+// Arrow function () => {}
+
+const doArrowFunction = () => {
+  console.log("Arrow function");
+};
+
+doArrowFunction();
