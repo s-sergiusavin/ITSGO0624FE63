@@ -270,3 +270,26 @@ const doArrowFunction = () => {
 };
 
 doArrowFunction();
+
+// Functions with params
+
+let number = 800; // variabila number nu se va confunda cu parametrul functiei de mai jos
+function addToFive(number) {
+  let result = 5 + number;
+  console.log(`Rezultatul este ${result}`);
+}
+
+addToFive(3);
+addToFive(10);
+
+const substractFrom100 = (number) => {
+  console.log(`Rezultatul este ${100 - number}`);
+};
+
+substractFrom100(20);
+substractFrom100("Marcel"); //NaN - not a number, modul js-ului de a ne spune ca am facut o operatie matematica intre
+// un numar si ceva care nu este un numar;
+
+substractFrom100();
+
+console.log(100 + "" + 3);
