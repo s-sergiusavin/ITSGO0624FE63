@@ -17,7 +17,11 @@ console.log("Attila");
  */
 
 // Primitives (primitive): number, string, boolean, undefined, null, symbol, bigInt
+<<<<<<< HEAD
 // References (referinta): object: array, functions
+=======
+// Refrences (referinta): objects: array, functions
+>>>>>>> main
 
 /**
  * Variable declaration types
