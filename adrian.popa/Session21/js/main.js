@@ -161,20 +161,30 @@ const moveOZN = () => {
 }
 
 const oznAnimationEnd = () => {
-    // downRay
     oznParent[0].onanimationend = downRay();
 }
 
+const oznDownRay = document.getElementsByClassName("oznRay");
+
 const downRay = () => {
-    const oznDownRay = document.getElementsByClassName("oznRay");
     oznDownRay[0].style.animation = 'downRay 5s forwards';
-    console.log(oznDownRay[0].style.animation);
 }
 
+const textOZN = document.getElementsByClassName("oznText");
+
 const shrinkText = () => {
-    console.log("Animation should be end");
-    const textOZN = document.getElementsByClassName("oznText");
     textOZN[0].style.animation = 'shrinkText 1s forwards';
+    setTimeout(changeText, 2000);
+}
+
+const changeText = () => {
+    textOZN[0].innerText = `Hello ITSchool, I'm watching you for a long time`;
+    textOZN[0].style.animation = 'growText 1s forwards';
+    setTimeOut(upRay, 2000);
+}
+
+const upRay = () => {
+    oznDownRay[0].style.animation = 'upRay 5s forwards';
 }
 
 const moveOZNRight = () => {
