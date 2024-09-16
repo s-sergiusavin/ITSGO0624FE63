@@ -137,3 +137,46 @@ const readInput = () => {
 const changeThisContent = () => {
     document.getElementsByClassName('innerHtmlMessage')[0].innerHTML = 'This text was <strong>changed</strong> by <u>js</u>';
 }
+
+const oznParent = document.getElementsByClassName("ozn");
+const oznChildrens = oznParent[0].children;
+
+let maxWidth = 0;
+for (let i = 0; i < oznChildrens.length; i++) {
+    if (oznChildrens[i].offsetWidth > maxWidth) {
+        maxWidth = oznChildrens[i].offsetWidth;
+    }
+}
+
+oznParent[0].style.maxWidth = maxWidth + "px";
+
+let oznMove = false;
+
+const moveOZN = () => {
+    if (oznMove) {
+        return;
+    }
+    oznMove = true;
+    oznParent[0].style.animation = 'moveFromLeftToCenter 5s forwards';
+}
+
+const oznAnimationEnd = () => {
+    // downRay
+    oznParent[0].onanimationend = downRay();
+}
+
+const downRay = () => {
+    const oznDownRay = document.getElementsByClassName("oznRay");
+    oznDownRay[0].style.animation = 'downRay 5s forwards';
+    console.log(oznDownRay[0].style.animation);
+}
+
+const shrinkText = () => {
+    console.log("Animation should be end");
+    const textOZN = document.getElementsByClassName("oznText");
+    textOZN[0].style.animation = 'shrinkText 1s forwards';
+}
+
+const moveOZNRight = () => {
+
+}

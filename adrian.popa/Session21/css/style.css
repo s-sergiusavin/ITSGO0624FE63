@@ -22,3 +22,107 @@
 .greenSquare {
     background-color: green;
 }
+
+.center {
+    text-align: center;
+}
+
+.firstExample {
+    position: relative;
+    height: 150px;
+}
+
+.ozn {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    left: 0px;
+    z-index: 2;
+}
+
+.firstExample .ozn .oznHeader {
+    width: 80px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: gray;
+    position: absolute;
+    top: -20px;
+    z-index: 2;
+}
+
+.firstExample .ozn .oznBottom {
+    width: 150px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: gray;
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+}
+
+.firstExample .oznRay {
+    border-bottom: 0px solid lime;
+    /* 65 px is maximum */
+    opacity: 0.8;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    height: 0;
+    width: 15px;
+    z-index: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.firstExample .oznText {
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes moveFromLeftToCenter {
+    from {
+        left: -150px;
+    }
+
+    to {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes downRay {
+    from {
+        border-bottom: 0px solid lime;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        height: 0;
+        width: 15px;
+    }
+
+    to {
+        border-bottom: 150px solid lime;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        height: 0;
+        width: 15px;
+        z-index: 1;
+    }
+}
+
+@keyframes shrinkText {
+    from {
+        bottom: 0;
+        font-size: 1rem;
+    }
+
+    to {
+        bottom: 100px;
+        font-size: 5;
+    }
+}
