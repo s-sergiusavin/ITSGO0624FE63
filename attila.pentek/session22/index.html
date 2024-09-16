@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Session 22 | Form validation</title>
+  </head>
+  <body>
+    <h1>Form validations</h1>
+
+    <div id="testBox">Acesta este un div demo</div>
+    <img
+      src="https://vetmed.tamu.edu/news/wp-content/uploads/sites/9/2023/05/AdobeStock_472713009-1200x900.jpeg"
+      alt="puppies"
+      width="200"
+      id="demoImage"
+    />
+    <img src="" alt="" width="300" id="newImage" />
+
+    <ul>
+      <li>Elem 1</li>
+      <li>Elem 2</li>
+      <li>Elem 3</li>
+      <li>Elem 4</li>
+      <li>Elem 5</li>
+    </ul>
+
+    <div id="clickMe">Click me!!!</div>
+    <input type="text" id="demoInput" />
+
+    <div class="toDoList">
+      <div>
+        <label for="toDoInput">Add Item</label>
+        <input type="text" id="toDoInput" placeholder="Enter your value" />
+        <button class="addButton">Add</button>
+      </div>
+    </div>
+
+    <ul class="toDoListItems"></ul>
+
+    <form action="" id="myForm" novalidate>
+      <label>
+        <span>Email</span>
+        <input type="email" placeholder="Enter your email" name="emailInput" />
+        <input type="submit" value="Check email" />
+      </label>
+    </form>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
