@@ -16,7 +16,7 @@ console.log("sergiu");
  */
 
 // Primitives (primitive): number, string, boolean, undefined, null, symbol, bigInt
-// Refereces (referinta): objects: array, functions
+// Refrences (referinta): objects: array, functions
 
 /**
  * Variable declaration types
