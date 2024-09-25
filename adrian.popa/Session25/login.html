@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News App | Login</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <h1>News App</h1>
+    <div id="loginForm">
+        <h2 id="headerTitle">Login</h2>
+
+        <form>
+            <span id="error" style="display: none;"></span>
+
+            <div class="loginFormField">
+                <label for="userInput">Username</label>
+                <input type="text" id="userInput" placeholder="Enter your username or email" required>
+            </div>
+
+            <div class="loginFormField">
+                <label for="passwordInput">Password</label>
+                <input type="password" id="passwordInput" placeholder="Enter your password" required>
+            </div>
+
+            <div class="loginFormField">
+                <input type="submit" value="Login" id="loginButton">
+            </div>
+
+            <div class="loginFormField">
+                <span id="forgotPassword">Forgot password?</span>
+            </div>
+        </form>
+
+        <div class="loginFormField">
+            <input type="button" value="Create new account" id="toggleAuthButton">
+        </div>
+    </div>
+
+
+    <script src="js/login.js"></script>
+</body>
+
+</html>
