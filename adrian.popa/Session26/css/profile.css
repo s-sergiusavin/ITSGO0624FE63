@@ -1,0 +1,297 @@
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    margin: 0;
+    background-color: #202020;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: lightblue;
+}
+
+header .mainSearch {
+    display: flex;
+    align-items: center;
+}
+
+header .mainSearch .logo {
+    padding: 1rem;
+    font-size: 3rem;
+    color: royalblue;
+}
+
+header .mainSearch .logo:hover {
+    color: darkblue;
+}
+
+header .mainSearch .searchInput {
+    height: 3rem;
+    border-radius: 1.5rem;
+    padding: 0 1rem;
+    border-color: beige;
+}
+
+header .mainSearch .searchInput:focus {
+    border: 0.25rem solid teal;
+}
+
+header .mainNavigation .navigation,
+header .links {
+    display: flex;
+}
+
+header .mainNavigation .navigation>li>a {
+    border-radius: 50%;
+    background-color: aquamarine;
+    margin: 0 0.35rem;
+    display: flex;
+}
+
+header .mainNavigation .navigation>li>a:hover {
+    background-color: teal;
+    border: 1px solid royalblue;
+}
+
+.navIcons {
+    font-size: 3rem;
+    color: royalblue;
+    margin: 0 0.5rem;
+}
+
+.navIcons:hover {
+    color: white;
+}
+
+.bellIcon {
+    position: relative;
+    display: block;
+}
+
+.bellIcon span {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: white;
+    background-color: red;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0.9rem;
+}
+
+nav.mainNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 4.8rem;
+    background: linear-gradient(0deg, #2b2b2b 0%, #2b2b2b 50%, #213b3a 75%, #3b6969 85%, #3d5858 100%);
+}
+
+nav.mainNav .profileInformations {
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+nav.mainNav img.bg-image {
+    height: 50vh;
+    width: 100%;
+    border-radius: 7px;
+}
+
+.mainNav .profileInformations .backgroundImage {
+    position: relative;
+}
+
+.edit {
+    position: absolute;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 0.5rem;
+    border-radius: 10px;
+    bottom: 10px;
+    right: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.7rem;
+}
+
+.profile {
+    margin-top: 5px;
+}
+
+.imageWrapper {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.profilePicture {
+    position: absolute;
+    border: 5px solid #2b2b2b;
+    width: 95%;
+    height: 95%;
+    border-radius: 50%;
+    left: 2.5%;
+    top: -25px;
+}
+
+.changeImage {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #494949;
+    border-radius: 50%;
+    bottom: 45px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.changeImage:hover {
+    background-color: gray;
+}
+
+.informations {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 0 170px;
+    justify-content: space-between;
+    text-align: start;
+    position: relative;
+}
+
+.name {
+    display: block;
+    color: white;
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+.friend {
+    display: block;
+    color: #7c7a7a;
+}
+
+.friendsImages {
+    margin-top: 5px;
+}
+
+.friends {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.profileButtons {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    flex: 4;
+    align-items: center;
+    justify-content: center;
+    display: inline-flex;
+    align-items: flex-end;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.storyButton,
+.editButton,
+.moreButton {
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 5px;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.storyButton {
+    background-color: #1877F2;
+}
+
+.editButton,
+.moreButton {
+    background-color: #494949;
+}
+
+.storyButton:hover {
+    background-color: #2d82f1;
+}
+
+.editButton:hover,
+.moreButton:hover {
+    background-color: #616161;
+}
+
+.customHr {
+    margin-top: 25px;
+    height: 1px;
+    background-color: #494949;
+    border: none;
+}
+
+main.content {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+main.content div.feed {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 49%;
+    margin-top: 10px;
+}
+
+main.content div.feed aside.leftContent,
+main.content div.feed aside.rightContent {
+    display: flex;
+    background-color: gray;
+    height: 100px;
+    border-radius: 10px;
+}
+
+main.content div.feed aside.leftContent {
+    width: 45%;
+}
+
+main.content div.feed aside.rightContent {
+    width: 55%;
+}

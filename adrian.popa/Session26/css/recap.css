@@ -1,0 +1,102 @@
+.backImage {
+    width: 3rem;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    background-color: transparent;
+}
+
+.inline {
+    display: inline;
+    background-color: red;
+    /* Nu se aplica fiindca e display inline */
+    width: 5rem;
+    height: 5rem;
+    margin: 5rem 1rem;
+}
+
+.inlineBlock {
+    display: inline-block;
+    background-color: red;
+    width: 5rem;
+    height: 5rem;
+}
+
+.block {
+    display: block;
+    background-color: red;
+    width: 5rem;
+    height: 5rem;
+}
+
+.none {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.child {
+    background-color: blue;
+    width: 5rem;
+    height: 5rem;
+}
+
+.grandChild {
+    background-color: orange;
+    width: 2rem;
+    height: 2rem;
+}
+
+.parent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    flex-direction: row;
+    /* default */
+}
+
+div.box.withBoxSizing {
+    box-sizing: border-box;
+    background-color: blue;
+}
+
+#idSelector {
+    background-color: orange;
+}
+
+.box {
+    background-color: red;
+    /* !important nu e recomandat */
+    width: 5rem;
+    height: 5rem;
+    border: 1px solid black;
+    margin: 5rem;
+}
+
+div.box.static {
+    top: 2rem;
+}
+
+.relative {
+    position: relative;
+    top: 2rem;
+    left: 7.5rem;
+}
+
+.relativeParent {
+    position: relative;
+    background-color: yellow;
+}
+
+.absolute {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+}
+
+.fixed {
+    position: fixed;
+    bottom: 2rem;
+    left: 5rem;
+}
