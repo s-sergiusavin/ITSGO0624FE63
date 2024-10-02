@@ -147,14 +147,29 @@
                         </div>
                     </div>
 
-                    <a href="#" class="profileOptions">
-                        <i class="bi bi-three-dots"></i>
-                    </a>
+                    <div class="profileOptionsWrapper">
+                        <button class="profileOptions">
+                            <i class="bi bi-three-dots"></i>
+                        </button>
+                        <div class="profileOptionsDropdown">
+                            <button>Edit this post</button>
+                            <button id="removePostButton">Remove this post</button>
+                        </div>
+                    </div>
                 </div>
+
                 <div class="content">
                     <div class="imgWrapper">
                         <img src="../assets/post.png" alt="Post" class="imgContent">
-                        <i class="bi bi-info-circle infoIcon" title="Afla mai multe"></i>
+                        <div class="infoIconWrapper">
+                            <i class="bi bi-info-circle infoIcon" title="Afla mai multe" tabindex="1"></i>
+                            <p class="infoMessage">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias ex
+                                aperiam quo voluptatem, illo atque praesentium sapiente, voluptate laboriosam culpa
+                                sequi!
+                                Accusantium facere suscipit aliquid minima, sapiente saepe nihil vel. Quae distinctio
+                                non
+                                voluptatum quasi officiis magnam, odit odio eveniet excepturi ex nihil, cum quod!</p>
+                        </div>
                     </div>
 
                     <strong class="postTitle">Titlul postarii</strong>
@@ -208,6 +223,7 @@
                     <button class="insertCommentButton"><i class="bi bi-send"></i></button>
                 </div>
                 <div class="userComments">
+                    <div class="newCommentPlaceholder"></div>
                     <div class="commentContent">
                         <div class="profileUserComment">
                             <a href="">
@@ -227,7 +243,7 @@
                                 animi veniam!
                             </span>
                             <div class="emojiReaction">😂</div>
-                            <span id="removeCommentButton">Remove this comment</span>
+                            <strong class="removeCommentButton">Remove this comment</strong>
                         </div>
 
                         <div class="commentReaction">
@@ -252,6 +268,7 @@
                             in
                             animi veniam!
                             <div class="emojiReaction">😂</div>
+                            <strong class="removeCommentButton">Remove this comment</strong>
                         </div>
 
                         <div class="commentReaction">

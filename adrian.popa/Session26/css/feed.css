@@ -267,6 +267,31 @@ main {
     display: flex;
     flex-direction: column;
 }
+.profileOptionsWrapper {
+    position: relative;
+}
+
+.profileOptionsWrapper .profileOptionsDropdown {
+    position: absolute;
+    z-index: 1;
+    right: 0.5rem;
+    width: 10rem;
+    justify-content: center;
+    flex-direction: column;
+    display: none;
+}
+
+.profileOptionsWrapper .profileOptionsDropdown button:hover {
+    color: royalblue;
+    font-weight: bold;
+    border: 1px solid blue
+}
+
+.profileOptionsWrapper .profileOptionsDropdown button {
+    background-color: white;
+    padding: 0.5rem 0;
+    cursor: pointer;
+}
 
 .mainContent .post .postHeader .profileOptions {
     width: 2rem;
@@ -303,6 +328,19 @@ main {
     color: white;
     justify-content: center;
     align-items: center;
+}
+
+.infoIconWrapper {
+    position: relative;
+}
+
+.infoMessage {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 3px solid black;
+    top: -0.5rem;
+    padding: 0.5rem;
 }
 
 .content .postTitle {
@@ -514,8 +552,9 @@ main {
     opacity: 1;
 }
 
-#removeCommentButton {
+.removeCommentButton {
     display: none;
+    cursor: pointer;
 }
 
 .post .commentSection .insertCommentButton::after {
