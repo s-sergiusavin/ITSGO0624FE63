@@ -461,8 +461,9 @@ main {
   display: none;
 }
 
-#removeCommentButton {
+.removeCommentButton {
   display: none;
+  cursor: pointer;
 }
 
 @keyframes ring {

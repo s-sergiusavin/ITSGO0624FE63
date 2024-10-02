@@ -65,28 +65,94 @@ shareButton.addEventListener("click", function () {
   this.classList.add("touched");
 });
 
-const commentButton = document.getElementById('commentButton')
-const commentInput = document.getElementById('commentInput');
+const commentButton = document.getElementById("commentButton");
+const commentInput = document.getElementById("commentInput");
 
-const commentMessage = document.getElementById('commentMessage');
-const removeCommentButton = document.getElementById('removeCommentButton')
+const commentMessage = document.getElementById("commentMessage");
+const userCommentList = document.getElementsByClassName("userComments")[0];
 
-commentMessage.innerText = localStorage.getItem('comment') || commentMessage.innerText;
+commentMessage.innerText =
+  localStorage.getItem("comment") || commentMessage.innerText;
 
-commentButton.addEventListener('click', function() {
-    commentInput.focus()
-    // commentInput.blur() // reversul functiei focus
-})
+commentButton.addEventListener("click", function () {
+  commentInput.focus();
+  // commentInput.blur() // reversul functiei focus
+});
 
 function setComment() {
-    commentMessage.innerText = commentInput.value;
-    localStorage.setItem('comment', JSON.stringify(commentInput.value))
-    commentInput.value = '';
+  const newComment = document.createElement("div");
+  const newCommentMessageContent = `
+  <div class="commentContent">
+              <div class="profileUserComment">
+                <a href=""
+                  ><img
+                    src="../assests/profile.png"
+                    alt="user profile"
+                    class="profileImage"
+                /></a>
+                <span>User name</span>
+              </div>
+
+              <div class="userCommentText">
+                <span id="commentMessage"
+                  >${commentInput.value}</span
+                >
+                <div class="emojiReaction">🥳</div>
+                <strong class="removeCommentButton">Remove this comment</strong>
+              </div>
+
+              <div class="commentReaction">
+                <strong class="commentReactionButton">Like</strong>
+                <strong class="commentReactionButton">Dislike</strong>
+                <strong class="commentReactionButton">Comment</strong>
+              </div>
+            </div>`;
+  newComment.innerHTML = newCommentMessageContent;
+  userCommentList.insertAdjacentElement("afterbegin", newComment);
+  localStorage.setItem("comment", JSON.stringify(commentInput.value));
+  commentInput.value = "";
+  addRemoveCommentListeners();
 }
 
-commentInput.addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') {
-        setComment();
-        this.blur();
-    }
-})
+commentInput.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    setComment();
+    this.blur();
+  }
+});
+
+const comentInputButton = document.getElementsByClassName(
+  "insertCommentButton"
+)[0];
+
+comentInputButton.addEventListener("click", setComment);
+
+function addRemoveCommentListeners() {
+  const commentContentList = Array.from(
+    document.getElementsByClassName("commentContent")
+  );
+
+  const removeCommentButtons = Array.from(
+    document.getElementsByClassName("removeCommentButton")
+  );
+
+  commentContentList.forEach((commentContent, index) => {
+    commentContent.addEventListener("mouseover", function () {
+      removeCommentButtons[index].style.display = "inline-block";
+    });
+
+    commentContent.addEventListener("mouseout", function () {
+      removeCommentButtons[index].style.display = "none";
+    });
+  });
+
+  removeCommentButtons.forEach((removeCommentButton, index) => {
+    removeCommentButton.addEventListener("click", () => {
+      commentContentList[index].remove();
+    });
+  });
+}
+
+addRemoveCommentListeners();
+
+// de rezolvat cu local storage pt a afisa corect mesajele salvate
