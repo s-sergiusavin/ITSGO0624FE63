@@ -162,7 +162,8 @@ main {
 }
 
 .mainContent .post {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
 }
 
 .mainContent .post .postHeader {
@@ -191,6 +192,33 @@ main {
   flex-direction: column;
 }
 
+.profileOptionsWrapper {
+  position: relative;
+}
+
+.profileOptionsWrapper .profileOptionsDropdown {
+  position: absolute;
+  z-index: 1;
+  right: 0.5rem;
+  width: 10rem;
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.profileOptionsWrapper .profileOptionsDropdown button {
+  padding: 0.5rem 0;
+  cursor: pointer;
+  background-color: whitesmoke;
+}
+
+.profileOptionsWrapper .profileOptionsDropdown button:hover {
+  color: blue;
+  font-weight: bold;
+  background: white;
+  border: 1px solid blue;
+}
+
 .mainContent .post .postHeader .profileOptions {
   width: 2rem;
   height: 2rem;
@@ -198,6 +226,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .mainContent .post .postHeader .profileOptions:hover {
@@ -226,6 +255,19 @@ main {
   align-items: center;
   cursor: pointer;
   color: white;
+}
+
+.infoIconWrapper {
+  position: relative;
+}
+
+.infoMessage {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 3px solid black;
+  top: -0.5rem;
+  padding: 0.5rem;
 }
 
 .content .postTitle {
@@ -290,7 +332,6 @@ main {
   align-items: center;
   color: white;
   font-weight: bold;
-
 }
 
 .post .reactsActions .actions .reaction:hover {
