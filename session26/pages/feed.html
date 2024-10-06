@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Media App | Feed</title>
+    <!-- Fonturile si librariile se importa inainte de importul fisierelor de stilizare -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Dupa importul librariilor externe ar trebui sa facem importul fisierelor de stilizare -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/feed.css" />
+  </head>
+  <body>
+    <header>
+      <div class="mainSearch">
+        <a href=""><i class="bi bi-facebook logo"></i></a>
+        <input
+          type="search"
+          class="searchInput"
+          placeholder="Search on social media"
+        />
+      </div>
+
+      <nav class="mainNavigation">
+        <ul class="navigation">
+          <li>
+            <a href="feed.html"
+              ><i class="bi bi-house navIcons" title="Home"></i
+            ></a>
+          </li>
+
+          <li>
+            <a href="profile.html"
+              ><i class="bi bi-person navIcons" title="Profile"></i
+            ></a>
+          </li>
+
+          <li>
+            <a href="#" rel="nofollow noopener">
+              <i class="bi bi-messenger navIcons" title="Send a message"></i>
+            </a>
+          </li>
+
+          <li>
+            <a href="#"
+              ><i class="bi bi-camera-reels navIcons" title="Post a reel"></i
+            ></a>
+          </li>
+        </ul>
+      </nav>
+
+      <ul class="links">
+        <li>
+          <a href="landingPage.html"
+            ><i class="bi bi-plus-circle navIcons" title="Create a new post"></i
+          ></a>
+        </li>
+        <li>
+          <a href="" class="bellIcon">
+            <i class="bi bi-bell navIcons" title="View notifications"></i>
+            <span>12</span>
+          </a>
+        </li>
+        <li>
+          <div class="acountSettings">
+            <button id="accountSettingsButton">
+              <i class="bi bi-gear navIcons" title="Settings"></i>
+            </button>
+            <div class="accountSettingsMenu">
+              <button>Profile Settings</button>
+              <button id="logoutButton">Logout</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </header>
+
+    <main>
+      <aside class="leftContent">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint fugit
+        optio, facilis incidunt quibusdam inventore consequuntur voluptate in
+        culpa magni nobis modi! Obcaecati, numquam ex inventore ab natus ullam
+        libero nobis, rerum nam ipsa quaerat neque at. Nesciunt dolore, porro
+        similique, sequi accusamus vitae ipsam nisi neque iure error delectus
+        ipsa ea. Molestiae illum ullam omnis alias, nobis, blanditiis quidem
+        perspiciatis modi distinctio sint perferendis doloribus porro officiis?
+        Provident eum deleniti consequuntur voluptatum. Dolorem dolore quaerat
+        libero deleniti similique nihil aliquam asperiores illum odit rerum
+        incidunt veniam iure alias ab ipsam quasi modi voluptas, nulla quibusdam
+        maxime repudiandae voluptatem qui. Quos ut deleniti, fuga recusandae
+        explicabo, aliquid voluptates quia tempora iusto sapiente ullam cum
+        asperiores labore? Architecto, asperiores voluptatem facilis quia totam
+        consequuntur doloremque eius? Odio neque deleniti magnam. Pariatur
+        distinctio ipsum voluptates suscipit ipsa cumque? Consequatur, iure,
+        deleniti placeat ratione veniam tenetur minima animi illo excepturi,
+        exercitationem autem atque. Excepturi voluptas autem beatae odio natus
+        quod quos minus voluptatibus eum iste exercitationem et fugiat
+        necessitatibus hic tempora assumenda saepe accusantium fuga, alias eius
+        distinctio molestiae deserunt corrupti. Cumque, sequi voluptatum quo
+        error explicabo amet velit praesentium officiis delectus beatae ipsum
+        aperiam consequatur tempore est inventore reiciendis iusto possimus unde
+        provident ea, sed nobis placeat. Nisi dolor aliquam qui nostrum, vel
+        aperiam dignissimos eligendi quae rem voluptas ipsam, minima est
+        asperiores doloremque autem molestias a maxime totam quas, omnis non
+        nihil saepe accusantium! Deserunt odit amet, cum sit mollitia
+        perspiciatis, voluptatem alias illo quos corporis ut numquam beatae
+        similique fuga ea excepturi porro recusandae at dolores nostrum iusto
+        eveniet, debitis ratione? Maxime sunt autem sint ipsam harum ex
+        doloremque blanditiis asperiores, minus aperiam libero ut? Aperiam
+        eveniet minus maiores vel? In praesentium iure reiciendis molestias
+        optio consectetur, quam cupiditate repellendus excepturi, labore soluta
+        debitis accusamus dicta quibusdam dolor eos mollitia!
+      </aside>
+
+      <section class="mainContent">
+        <div class="post">
+          <div class="postHeader">
+            <div class="profileUserInfo">
+              <a href=""
+                ><img
+                  src="../assests/profile.png"
+                  alt="user profile"
+                  class="profileImage"
+              /></a>
+              <div class="profileName">
+                <span>Sergiu Savin</span>
+                <span>31 Jul 2024</span>
+              </div>
+            </div>
+
+            <div class="profileOptionsWrapper">
+              <button class="profileOptions">
+                <i class="bi bi-three-dots"></i>
+              </button>
+              <div class="profileOptionsDropdown">
+                <button>Edit this post</button>
+                <button id="removePostButton">Remove this post</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="content">
+            <div class="imgWrapper">
+              <img
+                src="../assests/post.png"
+                alt="travel post"
+                class="imgContent"
+              />
+              <div class="infoIconWrapper">
+                <i
+                  class="bi bi-info-circle infoIcon"
+                  title="Afla mai multe"
+                  tabindex="1"
+                ></i>
+                <p class="infoMessage">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Accusamus delectus dolor obcaecati perferendis eum quia
+                  suscipit possimus harum magnam, in numquam nemo, adipisci odio
+                  excepturi consequatur. In sunt maxime ullam!
+                </p>
+              </div>
+            </div>
+
+            <strong class="postTitle">Titlul postarii</strong>
+
+            <p class="postDescription">
+              Aceasta este prima mea postare facuta pe reteaua de socializare
+              creata de mine in cadrul cursului de Front End Development
+            </p>
+            <a href="landingPage.html" class="readMoreButton"
+              ><strong>Read more</strong>acest text nu va fi vizibil</a
+            >
+          </div>
+
+          <div class="reacts">
+            <div class="likesInfo">
+              <i class="bi bi-hand-thumbs-up reactsIcon"></i>
+              <span><span id="likesNumber"></span> likes</span>
+            </div>
+
+            <div class="commentsInfo">
+              <span><span id="sharesNumber"></span> shares</span>
+              <i class="bi bi-chat-dots"></i>
+            </div>
+          </div>
+
+          <hr />
+
+          <div class="reactsActions">
+            <ul class="actions">
+              <li class="reaction" id="likeButton">
+                <i class="bi bi-hand-thumbs-up"></i>
+                <span>Like</span>
+              </li>
+
+              <li class="reaction" id="commentButton">
+                <i class="bi bi-chat-dots"></i>
+                <span>Comment</span>
+              </li>
+
+              <li class="reaction" id="shareButton">
+                <i class="bi bi-share"></i>
+                <span class="noOfSharesBadge">5</span>
+                <span>Share</span>
+              </li>
+            </ul>
+          </div>
+
+          <hr />
+
+          <div class="commentSection">
+            <a href=""
+              ><img
+                src="../assests/profile.png"
+                alt="user profile"
+                class="profileImage"
+            /></a>
+            <input
+              type="text"
+              placeholder="Adauga un comentariu"
+              class="newCommentField"
+              id="commentInput"
+            />
+            <button class="insertCommentButton">
+              <i class="bi bi-send"></i>
+            </button>
+          </div>
+
+          <div class="userComments">
+            <div class="commentContent">
+              <div class="profileUserComment">
+                <a href=""
+                  ><img
+                    src="../assests/profile.png"
+                    alt="user profile"
+                    class="profileImage"
+                /></a>
+                <span>User name</span>
+              </div>
+
+              <div class="userCommentText">
+                <span id="commentMessage"
+                  >Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Neque, sapiente hic magnam aliquid quo suscipit sit ea
+                  mollitia expedita nisi obcaecati voluptatibus corrupti modi
+                  minus!</span
+                >
+                <div class="emojiReaction">🥳</div>
+                <strong class="removeCommentButton">Remove this comment</strong>
+              </div>
+
+              <div class="commentReaction">
+                <strong class="commentReactionButton">Like</strong>
+                <strong class="commentReactionButton">Dislike</strong>
+                <strong class="commentReactionButton">Comment</strong>
+              </div>
+            </div>
+
+            <div class="commentContent">
+              <div class="profileUserComment">
+                <a href=""
+                  ><img
+                    src="../assests/profile.png"
+                    alt="user profile"
+                    class="profileImage"
+                /></a>
+                <span>User name</span>
+              </div>
+
+              <div class="userCommentText">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque,
+                sapiente hic magnam aliquid quo suscipit sit ea mollitia
+                expedita nisi obcaecati voluptatibus corrupti modi minus!
+                <div class="emojiReaction">🥳</div>
+                <strong class="removeCommentButton">Remove this comment</strong>
+              </div>
+
+              <div class="commentReaction">
+                <strong class="commentReactionButton">Like</strong>
+                <strong class="commentReactionButton">Dislike</strong>
+                <strong class="commentReactionButton">Comment</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="rightContent">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis mollitia
+        fuga voluptas. Minima ratione sunt optio excepturi, dolores, suscipit
+        officiis enim quasi sit laborum expedita unde voluptatem, ex asperiores
+        perferendis? Quaerat, esse a! Culpa quis aut, eaque consequatur
+        assumenda tempore praesentium, quo impedit tempora dolorum incidunt
+        ducimus sed earum natus voluptates ipsum temporibus eum. Inventore nam
+        numquam corporis obcaecati suscipit, unde nemo ea quis expedita quae
+        vitae officiis deserunt laboriosam sapiente eveniet nihil officia
+        laudantium impedit quas corrupti est commodi facilis. Inventore,
+        necessitatibus saepe est, amet voluptatum officiis ipsa similique iste
+        deserunt pariatur nesciunt reiciendis molestiae reprehenderit assumenda.
+        Consequatur facilis quasi iusto ut nesciunt harum est blanditiis,
+        inventore sit sapiente minima odio vitae unde magnam labore accusamus
+        animi exercitationem ipsam sequi tempore commodi hic. Deserunt sit quae
+        ipsa! Id error similique at tempora culpa maxime impedit eveniet ratione
+        aliquam, provident exercitationem nostrum dicta, dolor quidem sapiente
+        necessitatibus nesciunt officia architecto magnam dolorem placeat
+        corporis. Enim rerum consequatur consequuntur laudantium rem, sunt,
+        blanditiis quos quo veritatis doloribus, dolorem ab eaque obcaecati
+        laboriosam libero. Aliquam reprehenderit quam doloremque eligendi
+        ducimus consectetur ex quibusdam blanditiis ullam vitae culpa tempore
+        adipisci hic cupiditate, temporibus quia velit ipsam sit laboriosam illo
+        officiis? Non, possimus cum ipsum unde tenetur deleniti asperiores
+        accusantium voluptatem ipsam dolorem. Asperiores perspiciatis veniam
+        corporis cupiditate cum accusantium vitae excepturi voluptas ullam a
+        molestias, officiis, blanditiis recusandae voluptatem nemo reiciendis
+        est autem, sed tempore nulla dicta possimus deserunt mollitia!
+        Recusandae fugiat cum beatae perferendis quas harum qui at, voluptate
+        dignissimos. Odio, rerum. Molestias maiores reprehenderit atque ad animi
+        qui quasi, at magni porro, aspernatur sed ipsam cumque impedit unde
+        doloribus illo! Maxime, a. Explicabo, ex modi quasi odit magnam alias
+        mollitia error pariatur similique voluptates qui temporibus culpa
+        quaerat vel laborum dolor animi ad itaque. Eum similique dolores
+        repellendus distinctio saepe sequi!
+      </aside>
+    </main>
+
+    <script src="../js/feed.js"></script>
+  </body>
+</html>
