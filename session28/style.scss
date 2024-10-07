@@ -1,0 +1,50 @@
+@import "scss/variables";
+@import "scss/mixins";
+
+.header {
+  border: 2px solid $globalBlue;
+  margin-top: 15px;
+
+  .title {
+    color: $globalRed;
+  }
+
+  .headerContainer {
+    @include flexBox(row);
+  }
+}
+
+.mainSection {
+  border: 3px solid green;
+  padding: 10px;
+  margin: 10px 0;
+
+  .firstContainer {
+    border: 1px solid $globalRed;
+    padding: 10px;
+
+    .title {
+      color: purple;
+    }
+
+    .mainSectionContainer {
+      @include flexBox(column);
+    }
+  }
+}
+
+.box {
+  @include box();
+
+  &.yellowBox {
+    background-color: yellow;
+
+    &:hover {
+      background-color: green;
+    }
+  }
+
+  &:hover {
+    background-color: orange;
+  }
+}
