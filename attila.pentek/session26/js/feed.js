@@ -12,6 +12,10 @@ accountSettingsButton.addEventListener("click", function () {
   }
 });
 
+accountSettingsButton.addEventListener('blur', function {
+  accountSettingsList.style.display = "none";
+})
+
 logoutButton.addEventListener("click", () => {
   window.open("../login.html", "_self");
 });
@@ -74,9 +78,20 @@ const userCommentList = document.getElementsByClassName("userComments")[0];
 commentMessage.innerText =
   localStorage.getItem("comment") || commentMessage.innerText;
 
+let showComments = true;
+
 commentButton.addEventListener("click", function () {
   commentInput.focus();
   // commentInput.blur() // reversul functiei focus
+
+  if (showComments) {
+    userCommentList.style.display = "block";
+    commentInput.focus();
+  } else {
+    userCommentList.style.display = "none";
+  }
+
+  showComments = !showComments;
 });
 
 function setComment() {
@@ -156,3 +171,42 @@ function addRemoveCommentListeners() {
 addRemoveCommentListeners();
 
 // de rezolvat cu local storage pt a afisa corect mesajele salvate
+
+const infoIcon = document.getElementsByClassName("infoIcon")[0];
+const infoMessage = document.getElementsByClassName("infoMessage")[0];
+
+let infoIconDisplayTimeout;
+
+infoIcon.addEventListener("mouseover", function () {
+  infoIconDisplayTimeout = setTimeout(() => {
+    infoMessage.style.display = "block";
+  }, 1000);
+});
+
+infoIcon.addEventListener("mouseout", function () {
+  clearTimeout(infoIconDisplayTimeout);
+  infoMessage.style.display = "none";
+});
+
+infoIcon.addEventListener("click", () => {
+  if (infoMessage.style.display === "block") {
+    infoMessage.style.display = "none";
+  } else {
+    infoMessage.style.display = "block";
+  }
+});
+
+infoIcon.addEventListener('blur', () => {
+  infoMessage.style.display = "none";
+})
+
+const profileOptionsDropdown = document.getElementsByClassName('profileOptionsDropdown')[0];
+const profileOptionsButton = document.getElementsByClassName('profileOptions')[0];
+
+profileOptionsButton.addEventListener('click', function() {
+  if(profileOptionsDropdown.style.display === 'none') {
+    profileOptionsDropdown.style.display = 'flex'
+  } else {
+    profileOptionsDropdown.style.display = 'none';
+  }
+})

@@ -162,7 +162,8 @@ main {
 }
 
 .mainContent .post {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
 }
 
 .mainContent .post .postHeader {
@@ -200,6 +201,25 @@ main {
   align-items: center;
 }
 
+.profileOptionsWrapper {
+  position: relative;
+}
+
+.profileOptionsDropdown {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  right: 0.5rem;
+  width: 10rem;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.profileOptionsDropdown button {
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+
 .mainContent .post .postHeader .profileOptions:hover {
   background-color: lightgray;
 }
@@ -226,6 +246,19 @@ main {
   align-items: center;
   cursor: pointer;
   color: white;
+}
+
+.infoIconWrapper {
+  position: relative;
+}
+
+.infoMessage {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 3px solid black;
+  top: -0.5rem;
+  padding: 0.5rem;
 }
 
 .content .postTitle {
@@ -290,7 +323,6 @@ main {
   align-items: center;
   color: white;
   font-weight: bold;
-
 }
 
 .post .reactsActions .actions .reaction:hover {
