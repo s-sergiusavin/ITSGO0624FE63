@@ -192,6 +192,33 @@ main {
   flex-direction: column;
 }
 
+.profileOptionsWrapper {
+  position: relative;
+}
+
+.profileOptionsWrapper .profileOptionsDropdown {
+  position: absolute;
+  z-index: 1;
+  right: 0.5rem;
+  width: 10rem;
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.profileOptionsWrapper .profileOptionsDropdown button {
+  padding: 0.5rem 0;
+  cursor: pointer;
+  background-color: whitesmoke;
+}
+
+.profileOptionsWrapper .profileOptionsDropdown button:hover {
+  color: blue;
+  font-weight: bold;
+  background: white;
+  border: 1px solid blue;
+}
+
 .mainContent .post .postHeader .profileOptions {
   width: 2rem;
   height: 2rem;
@@ -199,24 +226,6 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.profileOptionsWrapper {
-  position: relative;
-}
-
-.profileOptionsDropdown {
-  display: none;
-  position: absolute;
-  z-index: 1;
-  right: 0.5rem;
-  width: 10rem;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.profileOptionsDropdown button {
-  padding: 0.5rem 0;
   cursor: pointer;
 }
 

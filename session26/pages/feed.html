@@ -138,9 +138,15 @@
               </div>
             </div>
 
-            <a href="#" class="profileOptions"
-              ><i class="bi bi-three-dots"></i
-            ></a>
+            <div class="profileOptionsWrapper">
+              <button class="profileOptions">
+                <i class="bi bi-three-dots"></i>
+              </button>
+              <div class="profileOptionsDropdown">
+                <button>Edit this post</button>
+                <button id="removePostButton">Remove this post</button>
+              </div>
+            </div>
           </div>
 
           <div class="content">
@@ -150,7 +156,19 @@
                 alt="travel post"
                 class="imgContent"
               />
-              <i class="bi bi-info-circle infoIcon" title="Afla mai multe"></i>
+              <div class="infoIconWrapper">
+                <i
+                  class="bi bi-info-circle infoIcon"
+                  title="Afla mai multe"
+                  tabindex="1"
+                ></i>
+                <p class="infoMessage">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Accusamus delectus dolor obcaecati perferendis eum quia
+                  suscipit possimus harum magnam, in numquam nemo, adipisci odio
+                  excepturi consequatur. In sunt maxime ullam!
+                </p>
+              </div>
             </div>
 
             <strong class="postTitle">Titlul postarii</strong>
