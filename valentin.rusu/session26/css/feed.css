@@ -624,3 +624,25 @@ border-left: 0;
   width: 20px;
   margin-right: 10px;
 }
+
+
+.job-suggestion, .connection-suggestion {
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.job-suggestion button, .connection-suggestion button {
+  background-color: #0077B5;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.job-suggestion button:hover, .connection-suggestion button:hover {
+  background-color: #005582;
+}
