@@ -68,6 +68,38 @@ header .mainNavigation .navigation>li>a:hover {
   border: 1px solid royalblue;
 }
 
+.acountSettings {
+  position: relative;
+  background-color: inherit;
+}
+
+.acountSettings button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.accountSettingsMenu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 4.8rem;
+  right: 0;
+  width: 9rem;
+  background-color: lightblue;
+  border: 3px solid teal;
+}
+
+.accountSettingsMenu button {
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+
+.accountSettingsMenu button:hover {
+  color: blue;
+  font-weight: bold;
+}
+
 .navIcons {
   font-size: 3rem;
   color: royalblue;
