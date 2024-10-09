@@ -1,0 +1,48 @@
+.header {
+  border: 2px solid blue;
+  margin-top: 15px;
+}
+.header .title {
+  color: red;
+}
+.header .headerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.mainSection {
+  border: 3px solid green;
+  padding: 10px;
+  margin: 10px 0;
+}
+.mainSection .firstContainer {
+  border: 1px solid red;
+  padding: 10px;
+}
+.mainSection .firstContainer .title {
+  color: purple;
+}
+.mainSection .firstContainer .mainSectionContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  margin: 10px;
+}
+.box.yellowBox {
+  background-color: yellow;
+}
+.box.yellowBox:hover {
+  background-color: green;
+}
+.box:hover {
+  background-color: orange;
+}/*# sourceMappingURL=style.css.map */
