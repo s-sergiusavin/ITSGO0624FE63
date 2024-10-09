@@ -47,3 +47,22 @@ function likePost(button) {
 function commentPost(button) {
   alert("Comment feature to be added soon!");
 }
+
+
+// Get the Follow button
+const followButton = document.getElementById('follow-btn');
+
+// Function to toggle the Follow/Unfollow state
+followButton.addEventListener('click', function() {
+  if (followButton.innerText === 'Follow') {
+    followButton.innerText = 'Unfollow';
+    followButton.style.backgroundColor = 'red'; // Change the button color when following
+    followButton.style.color = 'white'; // Change the text color
+    alert('You are now following this user.');
+  } else {
+    followButton.innerText = 'Follow';
+    followButton.style.backgroundColor = ''; // Reset to default color
+    followButton.style.color = ''; // Reset to default text color
+    alert('You have unfollowed this user.');
+  }
+});
