@@ -279,3 +279,31 @@ async function  filterData(searchTerm) {
 
 
 
+ // Function to handle "Apply" button clicks
+ const applyButtons = document.querySelectorAll('.apply-btn');
+ applyButtons.forEach((button, index) => {
+   button.addEventListener('click', () => {
+     // Get the job title and company
+     const job = button.parentElement.querySelector('strong').innerText;
+     const company = button.parentElement.innerText.split(' at ')[1].trim();
+
+     // Display a message or simulate action
+     alert(`You have applied for the position of ${job} at ${company}`);
+     button.disabled = true; // Disable the button after applying
+     button.innerText = 'Applied';
+   });
+ });
+
+ // Function to handle "Connect" button clicks
+ const connectButtons = document.querySelectorAll('.connect-btn');
+ connectButtons.forEach((button) => {
+   button.addEventListener('click', () => {
+     // Get the person's name
+     const person = button.parentElement.querySelector('p').innerText;
+
+     // Display a message or simulate action
+     alert(`Connection request sent to ${person}`);
+     button.disabled = true; // Disable the button after connecting
+     button.innerText = 'Requested';
+   });
+ });
