@@ -86,40 +86,51 @@
     </header>
 
     <main>
-      <aside class="leftContent">
+      <aside class="leftContent" id="sidebar">
+        <button id="toggleSidebarBtn">Toggle Sidebar</button>
         <div class="sidebar-profile-box">
           <img src="../img/3.jpg" width="100%">
-          <div class="sidebar-profile-info">
+          <div class="sidebar-profile-info" id="profileInfo">
             <img src="../img/profile.jpg">
-            <h1>User Name</h1>
-            <h3>Profession</h3>
+            <h1 id="username">User Name</h1>
+            <h3 id="profession">Profession</h3>
             <ul>
-              <li>Profile views <span>534</span></li>
-              <li>Post views <span>4545</span></li>
-              <li>Profile likes <span>7587</span></li>
+              <li>Profile views <span id="profileViews">534</span></li>
+              <li>Post views <span id="postViews">4545</span></li>
+              <li>Profile likes <span id="profileLikes">7587</span></li>
             </ul>
           </div>
           <div class="sidebar-profile-link">
-            <a href="#"><img src="../img/briefcase.png"> Projects</a>
-            <a href="#"><img src="../img/briefcase.png"> Works</a>
+            <a href="#" class="tooltip"><img src="../img/briefcase.png"> Projects
+              <span class="tooltiptext">View Projects</span>
+            </a>
+            <a href="#" class="tooltip"><img src="../img/briefcase.png"> Works
+              <span class="tooltiptext">View Works</span>
+            </a>
           </div>
         </div>
+      
         <div class="sidebar-activity">
-          <h3>RECENT</h3>
-          <a href="#"><img src="../img/home.png"> Profession 1</a>
-          <a href="#"><img src="../img/home.png"> Profession 2</a>
-          <a href="#"><img src="../img/home.png"> Profession 3</a>
-          <a href="#"><img src="../img/home.png"> Profession 4</a>
-          <a href="#"><img src="../img/home.png"> Profession 5</a>
-          <a href="#"><img src="../img/home.png"> Profession 6</a>
-          <h3>GROUPS</h3>
-          <a href="#"><img src="../img/users.png"> Group 1</a>
-          <a href="#"><img src="../img/users.png"> Group 2</a>
-          <a href="#"><img src="../img/users.png"> Group 3</a>
-          <a href="#"><img src="../img/users.png"> Group 4</a>
+          <h3 id="toggleRecentBtn" style="cursor: pointer;">RECENT</h3>
+          <div id="recentSection">
+            <a href="#"><img src="../img/home.png"> Profession 1</a>
+            <a href="#"><img src="../img/home.png"> Profession 2</a>
+            <a href="#"><img src="../img/home.png"> Profession 3</a>
+            <a href="#"><img src="../img/home.png"> Profession 4</a>
+            <a href="#"><img src="../img/home.png"> Profession 5</a>
+            <a href="#"><img src="../img/home.png"> Profession 6</a>
+          </div>
+      
+          <h3 id="toggleGroupsBtn" style="cursor: pointer;">GROUPS</h3>
+          <div id="groupsSection">
+            <a href="#"><img src="../img/users.png"> Group 1</a>
+            <a href="#"><img src="../img/users.png"> Group 2</a>
+            <a href="#"><img src="../img/users.png"> Group 3</a>
+            <a href="#"><img src="../img/users.png"> Group 4</a>
+          </div>
         </div>
       </aside>
-  
+      
 
       <section class="mainContent">
         <div class="post">

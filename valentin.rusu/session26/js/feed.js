@@ -307,3 +307,72 @@ async function  filterData(searchTerm) {
      button.innerText = 'Requested';
    });
  });
+
+
+ document.addEventListener("DOMContentLoaded", function () {
+  // Toggle Sidebar
+  const sidebar = document.getElementById("sidebar");
+  const toggleSidebarBtn = document.getElementById("toggleSidebarBtn");
+
+  toggleSidebarBtn.addEventListener("click", function () {
+    if (sidebar.style.display === "none") {
+      sidebar.style.display = "block";
+    } else {
+      sidebar.style.display = "none";
+    }
+  });
+
+  // Simulate dynamic updates for profile views, post views, and likes
+  let profileViews = 534;
+  let postViews = 4545;
+  let profileLikes = 7587;
+
+  setInterval(function () {
+    profileViews += Math.floor(Math.random() * 10);
+    postViews += Math.floor(Math.random() * 20);
+    profileLikes += Math.floor(Math.random() * 5);
+
+    document.getElementById("profileViews").textContent = profileViews;
+    document.getElementById("postViews").textContent = postViews;
+    document.getElementById("profileLikes").textContent = profileLikes;
+  }, 3000); // updates every 3 seconds
+
+  // Expand/Collapse "Recent" section
+  const toggleRecentBtn = document.getElementById("toggleRecentBtn");
+  const recentSection = document.getElementById("recentSection");
+
+  toggleRecentBtn.addEventListener("click", function () {
+    if (recentSection.style.display === "none") {
+      recentSection.style.display = "block";
+    } else {
+      recentSection.style.display = "none";
+    }
+  });
+
+  // Expand/Collapse "Groups" section
+  const toggleGroupsBtn = document.getElementById("toggleGroupsBtn");
+  const groupsSection = document.getElementById("groupsSection");
+
+  toggleGroupsBtn.addEventListener("click", function () {
+    if (groupsSection.style.display === "none") {
+      groupsSection.style.display = "block";
+    } else {
+      groupsSection.style.display = "none";
+    }
+  });
+
+  // Simulate loading profile information dynamically
+  const profileData = {
+    username: "John Doe",
+    profession: "Software Engineer",
+    profileViews: 1000,
+    postViews: 2000,
+    profileLikes: 3000
+  };
+
+  document.getElementById("username").textContent = profileData.username;
+  document.getElementById("profession").textContent = profileData.profession;
+  document.getElementById("profileViews").textContent = profileData.profileViews;
+  document.getElementById("postViews").textContent = profileData.postViews;
+  document.getElementById("profileLikes").textContent = profileData.profileLikes;
+});
