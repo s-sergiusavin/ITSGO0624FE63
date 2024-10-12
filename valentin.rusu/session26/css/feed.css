@@ -56,14 +56,14 @@ header .links {
   display: flex;
 }
 
-header .mainNavigation .navigation > li > a {
+header .mainNavigation .navigation>li>a {
   border-radius: 50%;
   background-color: aquamarine;
   margin: 0 0.35rem;
   display: flex;
 }
 
-header .mainNavigation .navigation > li > a:hover {
+header .mainNavigation .navigation>li>a:hover {
   background-color: teal;
   border: 1px solid royalblue;
 }
@@ -441,11 +441,9 @@ main {
   font-weight: 700;
   color: #313133;
   background: #4fd1c5;
-  background: linear-gradient(
-    90deg,
-    rgba(129, 230, 217, 1) 0%,
-    rgba(79, 209, 197, 1) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(129, 230, 217, 1) 0%,
+      rgba(79, 209, 197, 1) 100%);
   border: none;
   border-radius: 50%;
   box-shadow: 12px 12px 24px rgba(79, 209, 197, 0.64);
@@ -513,6 +511,7 @@ main {
     height: 30px;
     opacity: 1;
   }
+
   100% {
     width: 75px;
     height: 75px;
@@ -552,13 +551,13 @@ main {
   color: #222;
 }
 
-.sidebar-profile-info h3{
+.sidebar-profile-info h3 {
   font-size: 14px;
   font-weight: 500;
   color: #777;
 }
 
-.sidebar-profile-info ul{
+.sidebar-profile-info ul {
   list-style: none;
   margin: 20px 0;
 }
@@ -574,7 +573,7 @@ main {
   color: #045be6;
 }
 
-.sidebar-profile-link{
+.sidebar-profile-link {
   display: flex;
   align-items: center;
   border-top: 1px solid #ccc;
@@ -591,7 +590,7 @@ main {
 }
 
 .sidebar-profile-link a:first-child {
-border-left: 0;
+  border-left: 0;
 }
 
 .sidebar-profile-link a img {
@@ -626,7 +625,8 @@ border-left: 0;
 }
 
 
-.job-suggestion, .connection-suggestion {
+.job-suggestion,
+.connection-suggestion {
   margin-bottom: 15px;
   padding: 10px;
   background-color: #fff;
@@ -634,7 +634,8 @@ border-left: 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.job-suggestion button, .connection-suggestion button {
+.job-suggestion button,
+.connection-suggestion button {
   background-color: #0077B5;
   color: white;
   padding: 5px 10px;
@@ -643,7 +644,8 @@ border-left: 0;
   cursor: pointer;
 }
 
-.job-suggestion button:hover, .connection-suggestion button:hover {
+.job-suggestion button:hover,
+.connection-suggestion button:hover {
   background-color: #005582;
 }
 
@@ -673,3 +675,103 @@ border-left: 0;
   visibility: visible;
   opacity: 1;
 }
+
+
+#toggleRecentBtn {
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+
+#toggleGroupsBtn {
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+#toggleRecentBtn:hover {
+  opacity: 0.6;
+}
+
+
+#toggleGroupsBtn:hover {
+  opacity: 0.6;
+}
+
+/* Container to hold content and sidebar */
+.container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Main content area */
+.content {
+  flex: 3;
+  padding: 20px;
+  background-color: #fff;
+}
+
+/* Sidebar */
+.sidebar {
+  flex: 1;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-left: 2px solid #ddd;
+}
+
+.sidebar h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/* News list styling */
+#news-list {
+  list-style: none;
+}
+
+.news-item {
+  margin-bottom: 15px;
+}
+
+.news-item a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.news-item a:hover {
+  text-decoration: underline;
+}
+
+.date {
+  display: block;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* Load More button */
+#load-more {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+#load-more:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column;
+  }
+
+  .sidebar {
+      margin-top: 20px;
+  }
+  

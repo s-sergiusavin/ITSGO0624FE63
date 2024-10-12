@@ -376,3 +376,40 @@ async function  filterData(searchTerm) {
   document.getElementById("postViews").textContent = profileData.postViews;
   document.getElementById("profileLikes").textContent = profileData.profileLikes;
 });
+
+
+document.getElementById('load-more').addEventListener('click', function () {
+  // News items to be added dynamically
+  const newNewsItems = [
+      {
+          title: 'Science: Major Discovery in Space',
+          date: 'Oct 9, 2024',
+          link: '#'
+      },
+      {
+          title: 'Finance: Stock Market Reaches New High',
+          date: 'Oct 8, 2024',
+          link: '#'
+      }
+  ];
+
+  const newsList = document.getElementById('news-list');
+
+  newNewsItems.forEach(news => {
+      const newsItem = document.createElement('li');
+      newsItem.classList.add('news-item');
+
+      const newsLink = document.createElement('a');
+      newsLink.href = news.link;
+      newsLink.textContent = news.title;
+
+      const newsDate = document.createElement('span');
+      newsDate.classList.add('date');
+      newsDate.textContent = news.date;
+
+      newsItem.appendChild(newsLink);
+      newsItem.appendChild(newsDate);
+
+      newsList.appendChild(newsItem);
+  });
+});
