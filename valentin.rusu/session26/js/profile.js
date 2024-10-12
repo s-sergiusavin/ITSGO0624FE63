@@ -66,3 +66,33 @@ followButton.addEventListener('click', function() {
     alert('You have unfollowed this user.');
   }
 });
+
+// Get the modal element
+var modal = document.getElementById("imageModal");
+
+// Get the modal image and caption elements
+var modalImage = document.getElementById("modalImage");
+var captionText = document.getElementById("caption");
+
+// Get all images that will trigger the modal
+var images = document.querySelectorAll(".clickable-image");
+
+var closeButton = document.querySelector(".close");
+
+images.forEach(function(image) {
+    image.addEventListener("click", function() {
+        modal.style.display = "block"; // Show the modal
+        modalImage.src = this.src; // Set the modal image to the clicked image
+        captionText.innerHTML = this.alt; // Set the caption to the image's alt text
+    });
+});
+
+closeButton.onclick = function() {
+    modal.style.display = "none";
+}
+
+modal.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
