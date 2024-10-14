@@ -257,6 +257,16 @@ async function filterData(params) {
     return response.json();
 }
 
+const friendButton = document.querySelectorAll('.friendId');
+
+friendButton.forEach(friend => {
+    const id = friend.getElementsByClassName('name')[0];
+    console.log(id.innerText.replace(" ", "_").replace(" ", "_"));
+    friend.addEventListener('click', function () {
+        window.open('profile.html?id=' + id.innerText.replace(" ", "_").replace(" ", "_"), "_self");
+    });
+})
+
 
 
 
