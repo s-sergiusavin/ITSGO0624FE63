@@ -1,10 +1,10 @@
 import Feature from "./Feature";
 import PropTypes from "prop-types";
 
-const Features = (toggleAction) => {
+const Features = ({ toggleAction }) => {
   const FEATURES = [
     {
-      name: "Toggle Lighths",
+      name: "Toggle Lights",
       action: "Turn the lights on",
       state: true,
       id: 0,
@@ -45,6 +45,7 @@ const Features = (toggleAction) => {
           />
         );
       })}
+
       {/* // <Feature name={FEATURES[0].name} action={FEATURES[0].action} />
       // <Feature name={FEATURES[1].name} action={FEATURES[1].action} />
       // <Feature name={FEATURES[2].name} action={FEATURES[2].action} />

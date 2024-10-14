@@ -1,8 +1,8 @@
 import "./Room.scss";
 import PropTypes from "prop-types";
 
-const Room = (status) => {
-  return <div className="room" style={{ oppacity: status }}></div>;
+const Room = ({ status }) => {
+  return <div className="room" style={{ opacity: status }}></div>;
 };
 
 Room.propTypes = {

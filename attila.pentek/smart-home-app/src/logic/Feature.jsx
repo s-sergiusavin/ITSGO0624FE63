@@ -6,6 +6,8 @@ const Feature = ({ name, action, toggleAction }) => {
     toggleAction(name);
   };
 
+  console.log(name);
+
   return (
     <div className="feature">
       <h3>{name}</h3>

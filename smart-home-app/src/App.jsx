@@ -9,9 +9,9 @@ function App() {
 
   const toggleTheAction = (action) => {
     if (action === "Toggle Lights") {
-      setLightState( (prevState) => {
-        return !prevState
-      })
+      setLightState((prevState) => {
+        return !prevState;
+      });
       // setLightState(!lightState)
     }
   };
@@ -20,7 +20,7 @@ function App() {
     <div>
       <div className="ui-features">
         <Light lightsOn={lightState} />
-        <Room status={1}/>
+        <Room status={1} />
       </div>
 
       <Features toggleAction={toggleTheAction} />
