@@ -1,0 +1,35 @@
+@import './scss/mixins';
+
+.ui-features {
+  @include flexbox();
+}
+
+.container {
+    @include flexbox();
+    flex-direction: column;
+    gap: 3rem;
+    padding: 1.5rem;
+    border: 3px solid blue;
+    margin-top: 6rem;
+  .features {
+    @include flexbox();
+    gap: 2rem;
+  }
+
+  .form {
+    padding: 1rem;
+    @include flexbox();
+    flex-direction: column;
+    gap: 1rem;
+
+    &.invalid {
+        border: 1px solid red
+    }
+
+    .control {
+        @include flexbox();
+        justify-content: space-between;
+        width: 20rem;
+    }
+  }
+}
