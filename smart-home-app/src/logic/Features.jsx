@@ -1,14 +1,13 @@
 import Feature from "./Feature";
 import PropTypes from "prop-types";
-import FeaturesForm from "./FeaturesForm";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const Features = ({ toggleAction }) => {
+const Features = ({ toggleAction, newFeature }) => {
   const FEATURES = [
     {
       name: "Toggle Lights",
       action: "Turn the lights on",
-      state: true,
+      state: false,
       id: 0,
     },
     {
@@ -31,20 +30,63 @@ const Features = ({ toggleAction }) => {
     },
   ];
 
-  const [features, setFeatures] = useState(FEATURES)
+  const [features, setFeatures] = useState(FEATURES);
+
+  useEffect( () => {
+    features.map( feature => {
+      if (feature.name === newFeature.name ) {
+        alert('This feature already exists. Please try again with another name')
+        newFeature.name = '';
+      }
+    })
+
+    if (newFeature.name !== '') {
+      setFeatures( prevState => {
+        return [newFeature, ...prevState]
+      })
+    }
+  }, [newFeature])
+
+  const toggleLights = () => {
+    setFeatures((prevState) => {
+      const updatedFeatures = prevState.map(feature => {
+        if (feature.name === "Toggle Lights") {
+          feature.state = !feature.state;
+          feature.action = `Turn the lights ${feature.state ? "off" : "on"}`
+        }
+        return feature;
+      })
+
+      return updatedFeatures;
+    });
+  };
+
+  const toggleAc = () => {
+    setFeatures((prevState) => {
+      const updatedFeatures = prevState.map(feature => {
+        if (feature.name === "Toggle AC") {
+          feature.state = !feature.state;
+          feature.action = `Turn AC ${feature.state ? "off" : "on"}`
+        }
+        return feature;
+      })
+
+      return updatedFeatures;
+    });
+  };
 
   const toggleTheAction = (value) => {
     toggleAction(value);
-  };
 
-  const updateFeatures = (newFeature) => {
-    setFeatures(prevState => {
-      return [
-        ...prevState,
-        newFeature
-      ]
-    })
-  }
+    switch (value) {
+      case "Toggle Lights":
+        toggleLights();
+        break;
+      case "Toggle AC":
+        toggleAc();
+        break;
+    }
+  };
 
   return (
     <div className="container">
@@ -55,18 +97,19 @@ const Features = ({ toggleAction }) => {
               name={feature.name}
               action={feature.action}
               key={feature.id}
+              state={feature.state}
               toggleAction={toggleTheAction}
             />
           );
         })}
       </div>
-      <FeaturesForm featureHandler={updateFeatures} currentItems={features.length}/>
     </div>
   );
 };
 
 Features.propTypes = {
   toggleAction: PropTypes.func.isRequired,
+  newFeature: PropTypes.object
 };
 
 export default Features;

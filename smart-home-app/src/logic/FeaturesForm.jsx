@@ -1,20 +1,37 @@
-import { useRef, useState } from "react";
-import PropTypes from 'prop-types';
+import { useState } from "react";
+import PropTypes from "prop-types";
 
-const FeaturesForm = ({featureHandler, currentItems}) => {
+const FeaturesForm = ({ updateFeatureHandler }) => {
   const [isFormValid, setFormValid] = useState(true);
 
-  const titleInputRef = useRef();
-  const actionInputRef = useRef();
-  const stateInputRef = useRef();
-  const descriptionInputRef = useRef();
+  const [nameField, setNameField] = useState("");
+  const [actionField, setActionField] = useState("");
+  const [stateField, setStateField] = useState(false);
+  const [descriptionField, setDescriptionField] = useState("");
+
+  const stateMethodDescription = (value) => {
+    let example = value;
+
+    const changeThis = (someValue) => {
+      example = someValue;
+    };
+
+    return [example, changeThis];
+  };
+  // const [primulLucruReturnat, functiaCareSchimbaValoarea] = stateMethodDescription(5)
+  // functiaCareSchimbaValoarea('test')
+  // console.log(primulLucruReturnat)
+
+  // const titleInputRef = useRef();
+  // const actionInputRef = useRef();
+  // const stateInputRef = useRef();
+  // const descriptionInputRef = useRef();
 
   const checkValid = () => {
     if (
-      titleInputRef.current.value === "" ||
-      actionInputRef.current.value === "" ||
-      stateInputRef.current.value === "" ||
-      descriptionInputRef.current.value === ""
+      nameField === "" ||
+      actionField === "" ||
+      descriptionField === ""
     ) {
       setFormValid(false);
     } else {
@@ -22,32 +39,39 @@ const FeaturesForm = ({featureHandler, currentItems}) => {
     }
   };
 
+  const nameChangeHandler = (e) => {
+    // console.log(e);
+    setNameField(e.target.value);
+  };
+
+  const actionChangeHandler = (e) => {
+    // console.log(e);
+    setActionField(e.target.value);
+  };
+
   const resetFields = () => {
-    titleInputRef.current.value = '';
-    actionInputRef.current.value = '';
-    stateInputRef.current.value = '';
-    descriptionInputRef.current.value = '';
-  }
+    setNameField('')
+    setActionField('')
+    setStateField(false)
+    setDescriptionField('')
+  };
 
   const submitHandler = (event) => {
     event.preventDefault();
     checkValid();
-
-    const titleValue = titleInputRef.current.value;
-    const actionValue = actionInputRef.current.value;
-    const stateValue = stateInputRef.current.value;
     // const descriptionValue = descriptionInputRef.current.value;
 
     const newFeature = {
-      name: titleValue,
-      action: actionValue,
-      state: stateValue,
-      id: currentItems,
+      name: nameField,
+      action: actionField,
+      state: stateField,
+      id: Math.random(),
     };
 
-    featureHandler(newFeature)
+    updateFeatureHandler(newFeature);
     resetFields();
   };
+
   return (
     <form
       className={`form ${isFormValid ? "valid" : "invalid"}`}
@@ -56,19 +80,30 @@ const FeaturesForm = ({featureHandler, currentItems}) => {
     >
       <div className="control">
         <label htmlFor="title">Feature title</label>
-        <input type="text" id="title" required ref={titleInputRef} />
+        <input type="text" id="title" required onChange={nameChangeHandler} value={nameField}/>
       </div>
 
       <div className="control">
         <label htmlFor="action">Feature action</label>
-        <input type="text" id="action" required ref={actionInputRef} />
+        <input
+          type="text"
+          id="action"
+          required
+          value={actionField}
+          onChange={actionChangeHandler}
+        />
       </div>
 
       <div className="control">
         <label htmlFor="state">Feature state</label>
-        <select id="state" required ref={stateInputRef}>
-            <option value="true">true</option>
-            <option value="false">false</option>
+        <select
+          id="state"
+          required
+          value={stateField}
+          onChange={(e) => setStateField(Boolean(e.target.value))}
+        >
+          <option value={true}>true</option>
+          <option value={false}>false</option>
         </select>
       </div>
 
@@ -78,7 +113,8 @@ const FeaturesForm = ({featureHandler, currentItems}) => {
           type="text"
           id="description"
           required
-          ref={descriptionInputRef}
+          value={descriptionField}
+          onChange={(e) => setDescriptionField(e.target.value)}
         />
       </div>
 
@@ -90,8 +126,7 @@ const FeaturesForm = ({featureHandler, currentItems}) => {
 };
 
 FeaturesForm.propTypes = {
-    featureHandler: PropTypes.func.isRequired,
-    currentItems: PropTypes.number.isRequired
-}
+  updateFeatureHandler: PropTypes.func.isRequired,
+};
 
 export default FeaturesForm;

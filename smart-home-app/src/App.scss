@@ -14,22 +14,23 @@
   .features {
     @include flexbox();
     gap: 2rem;
+    flex-wrap: wrap;
+  }
+}
+
+.form {
+  padding: 1rem;
+  @include flexbox();
+  flex-direction: column;
+  gap: 1rem;
+
+  &.invalid {
+      border: 1px solid red
   }
 
-  .form {
-    padding: 1rem;
-    @include flexbox();
-    flex-direction: column;
-    gap: 1rem;
-
-    &.invalid {
-        border: 1px solid red
-    }
-
-    .control {
-        @include flexbox();
-        justify-content: space-between;
-        width: 20rem;
-    }
+  .control {
+      @include flexbox();
+      justify-content: space-between;
+      width: 20rem;
   }
 }
