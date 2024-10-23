@@ -1,5 +1,9 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import MenuItem from "@mui/material/MenuItem";
 
 const FeaturesForm = ({ updateFeatureHandler }) => {
   const [isFormValid, setFormValid] = useState(true);
@@ -9,15 +13,30 @@ const FeaturesForm = ({ updateFeatureHandler }) => {
   const [stateField, setStateField] = useState(false);
   const [descriptionField, setDescriptionField] = useState("");
 
-  const stateMethodDescription = (value) => {
-    let example = value;
+  const [nameFieldError, setNameFieldError] = useState(false);
 
-    const changeThis = (someValue) => {
-      example = someValue;
-    };
+  const navigate = useNavigate();
 
-    return [example, changeThis];
-  };
+  const stateValues = [
+    {
+      value: true,
+      label: "👍 True",
+    },
+    {
+      value: false,
+      label: "👎 False",
+    },
+  ];
+
+  // const stateMethodDescription = (value) => {
+  //   let example = value;
+
+  //   const changeThis = (someValue) => {
+  //     example = someValue;
+  //   };
+
+  //   return [example, changeThis];
+  // };
   // const [primulLucruReturnat, functiaCareSchimbaValoarea] = stateMethodDescription(5)
   // functiaCareSchimbaValoarea('test')
   // console.log(primulLucruReturnat)
@@ -28,14 +47,14 @@ const FeaturesForm = ({ updateFeatureHandler }) => {
   // const descriptionInputRef = useRef();
 
   const checkValid = () => {
-    if (
-      nameField === "" ||
-      actionField === "" ||
-      descriptionField === ""
-    ) {
+    if (nameField === "" || actionField === "" || descriptionField === "") {
       setFormValid(false);
     } else {
       setFormValid(true);
+    }
+
+    if (nameField === "") {
+      setNameFieldError(true);
     }
   };
 
@@ -50,16 +69,19 @@ const FeaturesForm = ({ updateFeatureHandler }) => {
   };
 
   const resetFields = () => {
-    setNameField('')
-    setActionField('')
-    setStateField(false)
-    setDescriptionField('')
+    setNameField("");
+    setActionField("");
+    setStateField(false);
+    setDescriptionField("");
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
     checkValid();
-    // const descriptionValue = descriptionInputRef.current.value;
+
+    if (isFormValid) {
+      return;
+    }
 
     const newFeature = {
       name: nameField,
@@ -70,6 +92,7 @@ const FeaturesForm = ({ updateFeatureHandler }) => {
 
     updateFeatureHandler(newFeature);
     resetFields();
+    navigate("/smart-home");
   };
 
   return (
@@ -78,48 +101,62 @@ const FeaturesForm = ({ updateFeatureHandler }) => {
       noValidate
       onSubmit={submitHandler}
     >
-      <div className="control">
-        <label htmlFor="title">Feature title</label>
-        <input type="text" id="title" required onChange={nameChangeHandler} value={nameField}/>
-      </div>
+      <TextField
+        error={nameFieldError}
+        id="title-outlined-error-helper-text"
+        label="Feature title"
+        value={nameField}
+        onChange={nameChangeHandler}
+        helperText={nameFieldError && "Incorrect name."}
+        fullWidth 
+        required
+      />
 
-      <div className="control">
-        <label htmlFor="action">Feature action</label>
-        <input
-          type="text"
-          id="action"
-          required
-          value={actionField}
-          onChange={actionChangeHandler}
-        />
-      </div>
+      <TextField
+        error={nameFieldError}
+        id="action-outlined-error-helper-text"
+        label="Feature action"
+        value={actionField}
+        onChange={actionChangeHandler}
+        helperText={nameFieldError && "Incorrect name."}
+        fullWidth 
+        required
+      />
 
-      <div className="control">
-        <label htmlFor="state">Feature state</label>
-        <select
-          id="state"
-          required
-          value={stateField}
-          onChange={(e) => setStateField(Boolean(e.target.value))}
-        >
-          <option value={true}>true</option>
-          <option value={false}>false</option>
-        </select>
-      </div>
+      <TextField
+        id="state-outlined-select-currency"
+        select
+        label="Select"
+        defaultValue="EUR"
+        helperText="Please select your currency"
+        value={stateField}
+        fullWidth 
+        onChange={(e) => setStateField(Boolean(e.target.value))}
+      >
+        {stateValues.map((option) => (
+          <MenuItem key={option.value} value={option.value}>
+            {option.label}
+          </MenuItem>
+        ))}
+      </TextField>
 
-      <div className="control">
-        <label htmlFor="description">Feature description</label>
-        <input
-          type="text"
-          id="description"
-          required
-          value={descriptionField}
-          onChange={(e) => setDescriptionField(e.target.value)}
-        />
-      </div>
+      <TextField
+        error={nameFieldError}
+        id="action-outlined-error-helper-text"
+        label="Feature description"
+        value={descriptionField}
+        onChange={(e) => setDescriptionField(e.target.value)}
+        helperText={nameFieldError && "Incorrect name."}
+        multiline
+        minRows={4}
+        fullWidth 
+        required
+      />
 
       <div className="actions">
-        <button>Add feature</button>
+        <Button variant="contained" type="submit">
+          Add Feature
+        </Button>
       </div>
     </form>
   );
