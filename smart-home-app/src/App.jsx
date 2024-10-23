@@ -4,14 +4,22 @@ import Features from "./logic/Features";
 import Light from "./ui/Light";
 import Room from "./ui/Room";
 import Ac from "./ui/Ac";
+import FeaturesForm from "./logic/FeaturesForm";
 
 function App() {
-  let [lightState, setLightState] = useState(false);
+  let [lightState, setLightState] = useState(true);
   let [acState, setAcState] = useState(false);
   let [dirtProgress, setDirtProgress] = useState({
     status: 0,
     cleaned: 0,
   });
+
+  const [feature, setFeature] = useState( {
+    name: '',
+    action: '',
+    state: false,
+    id: Math.random()
+  })
 
   /** Bad example: NU folositi un obiect de state pt variabile care nu au legatura */
   // const [actions, setActions] = useState({
@@ -63,6 +71,8 @@ function App() {
   };
 
   const startCleaning = () => {
+    clearInterval(dirtInterval.current);
+
     setDirtProgress((prevState) => {
       return {
         ...prevState,
@@ -86,6 +96,10 @@ function App() {
     }
   };
 
+  const updateFeatures = (newFeature) => {
+    setFeature(newFeature)
+  }
+
   return (
     <div>
       <div className="ui-features">
@@ -94,7 +108,8 @@ function App() {
         <Ac acOn={acState} />
         <Room status={dirtProgress.status} />
       </div>
-      <Features toggleAction={toggleActionHandler} />
+      <Features toggleAction={toggleActionHandler} newFeature={feature}/>
+      <FeaturesForm updateFeatureHandler={updateFeatures}/>
     </div>
   );
 }
