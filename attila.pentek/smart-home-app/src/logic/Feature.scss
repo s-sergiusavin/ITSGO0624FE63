@@ -1,9 +1,13 @@
 .feature {
-  border: 1px solid black;
-  width: 9rem;
-  height: 9rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    border: 1px solid black;
+    width: 9rem;
+    height: 9rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .buttonImg {
+        width: 5rem;
+    }
 }

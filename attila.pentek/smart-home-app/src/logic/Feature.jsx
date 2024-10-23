@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
-import buttonIcon from "./../assets/images/light-on.jpg";
-import buttonIconOff from "./../assets/images/light-on.jpg";
+import buttonIcon from "./../assets/images/lights-icon.png";
+import buttonIconOff from "./../assets/images/lights-icon-off.png";
 import "./Feature.scss";
 import { useEffect, useState } from "react";
 
@@ -10,13 +10,14 @@ const Feature = ({ name, action, toggleAction, state }) => {
   useEffect(() => {
     state ? setIcon(buttonIcon) : setIcon(buttonIconOff);
   }, [state]);
+
   const featureButtonHandler = () => {
     toggleAction(name);
   };
 
   return (
     <div className="feature">
-      <img src={icon} alt="" />
+      <img src={icon} alt="feature image" className="buttonImg" />
       <h3>{name}</h3>
       <button onClick={featureButtonHandler}>{action}</button>
     </div>

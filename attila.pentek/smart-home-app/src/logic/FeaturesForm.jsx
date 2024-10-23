@@ -1,13 +1,20 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
 
-const FeaturesForm = ({ featureHandler, currentItems }) => {
+const FeaturesForm = ({ updateFeatureHandler }) => {
   const [isFormValid, setFormValid] = useState(true);
 
   const [nameField, setNameField] = useState("");
   const [actionField, setActionField] = useState("");
-  const [stateField, setStateField] = useState("");
-  const [descriptionField, setDescriptionField] = "";
+  const [stateField, setStateField] = useState(false);
+  const [descriptionField, setDescriptionField] = useState("");
+
+  const [nameFieldError, setNameFieldError] = useState("false");
+
+  const navigate = useNavigate();
 
   const stateMethodDescription = (value) => {
     let example = value;
@@ -18,11 +25,9 @@ const FeaturesForm = ({ featureHandler, currentItems }) => {
 
     return [example, changeThis];
   };
-
-  // const [primulLucruReturnat, functiaCareSchimbaValoarea] =
-  //   stateMethodDescription(5);
-  // functiaCareSchimbaValoarea("test");
-  // console.log(testState);
+  // const [primulLucruReturnat, functiaCareSchimbaValoarea] = stateMethodDescription(5)
+  // functiaCareSchimbaValoarea('test')
+  // console.log(primulLucruReturnat)
 
   // const titleInputRef = useRef();
   // const actionInputRef = useRef();
@@ -30,15 +35,14 @@ const FeaturesForm = ({ featureHandler, currentItems }) => {
   // const descriptionInputRef = useRef();
 
   const checkValid = () => {
-    if (
-      nameField === "" ||
-      actionField === "" ||
-      stateField === "" ||
-      descriptionField === ""
-    ) {
+    if (nameField === "" || actionField === "" || descriptionField === "") {
       setFormValid(false);
     } else {
       setFormValid(true);
+    }
+
+    if (nameField === "") {
+      setNameFieldError(true);
     }
   };
 
@@ -55,7 +59,7 @@ const FeaturesForm = ({ featureHandler, currentItems }) => {
   const resetFields = () => {
     setNameField("");
     setActionField("");
-    setStateField("false");
+    setStateField(false);
     setDescriptionField("");
   };
 
@@ -63,20 +67,18 @@ const FeaturesForm = ({ featureHandler, currentItems }) => {
     event.preventDefault();
     checkValid();
 
-    const titleValue = titleInputRef.current.value;
-    const actionValue = actionInputRef.current.value;
-    const stateValue = stateInputRef.current.value;
-    const descriptionValue = descriptionInputRef.current.value;
+    // const descriptionValue = descriptionInputRef.current.value;
 
     const newFeature = {
-      nameField: titleValue,
-      actionField: actionValue,
-      stateField: stateValue,
-      id: currentItems,
+      name: nameField,
+      action: actionField,
+      state: stateField,
+      id: Math.random(),
     };
 
-    featureHandler(newFeature);
+    updateFeatureHandler(newFeature);
     resetFields();
+    navigate("/smart-home");
   };
 
   return (
@@ -86,17 +88,34 @@ const FeaturesForm = ({ featureHandler, currentItems }) => {
       onSubmit={submitHandler}
     >
       <div className="control">
-        <label htmlFor="title">Feature title</label>
-        <input type="text" id="title" required onChange={nameChangeHandler} />
+        <TextField
+          error
+          id="title-outlined-error-helper-text"
+          label="Feature title"
+          value={nameField}
+          onChange={nameChangeHandler}
+          helperText={"Incorrect name."}
+          required
+        />
+        {/* <label htmlFor="title">Feature title</label>
+        <input
+          type="text"
+          id="title"
+          required
+          onChange={nameChangeHandler}
+          value={nameField}
+        /> */}
       </div>
 
       <div className="control">
-        <label htmlFor="action">Feature action</label>
-        <input
-          type="text"
-          id="action"
-          required
+        <TextField
+          error
+          id="action-outlined-error-helper-text"
+          label="Feature action"
+          value={actionField}
           onChange={actionChangeHandler}
+          helperText={"Incorrect name."}
+          required
         />
       </div>
 
@@ -105,11 +124,11 @@ const FeaturesForm = ({ featureHandler, currentItems }) => {
         <select
           id="state"
           required
-          onChange={() => setStateField(git.target.value)}
           value={stateField}
+          onChange={(e) => setStateField(Boolean(e.target.value))}
         >
-          <option value="true">true</option>
-          <option value="false">false</option>
+          <option value={true}>true</option>
+          <option value={false}>false</option>
         </select>
       </div>
 
@@ -119,20 +138,22 @@ const FeaturesForm = ({ featureHandler, currentItems }) => {
           type="text"
           id="description"
           required
+          value={descriptionField}
           onChange={(e) => setDescriptionField(e.target.value)}
         />
       </div>
 
       <div className="actions">
-        <button>Add feature</button>
+        <Button variant="contained" type="submit">
+          Add feature
+        </Button>
       </div>
     </form>
   );
 };
 
 FeaturesForm.propTypes = {
-  featureHandler: PropTypes.func.isRequired,
-  currentItems: PropTypes.number.isRequired,
+  updateFeatureHandler: PropTypes.func.isRequired,
 };
 
 export default FeaturesForm;
