@@ -32,30 +32,32 @@ const Features = ({ toggleAction, newFeature }) => {
 
   const [features, setFeatures] = useState(FEATURES);
 
-  useEffect( () => {
-    features.map( feature => {
-      if (feature.name === newFeature.name ) {
-        alert('This feature already exists. Please try again with another name')
-        newFeature.name = '';
+  useEffect(() => {
+    features.map((feature) => {
+      if (feature.name === newFeature.name) {
+        alert(
+          "This feature already exists. Please try again with another name"
+        );
+        newFeature.name = "";
       }
-    })
+    });
 
-    if (newFeature.name !== '') {
-      setFeatures( prevState => {
-        return [newFeature, ...prevState]
-      })
+    if (newFeature.name !== "") {
+      setFeatures((prevState) => {
+        return [newFeature, ...prevState];
+      });
     }
-  }, [newFeature])
+  }, [newFeature]);
 
   const toggleLights = () => {
     setFeatures((prevState) => {
-      const updatedFeatures = prevState.map(feature => {
+      const updatedFeatures = prevState.map((feature) => {
         if (feature.name === "Toggle Lights") {
           feature.state = !feature.state;
-          feature.action = `Turn the lights ${feature.state ? "off" : "on"}`
+          feature.action = `Turn the lights ${feature.state ? "off" : "on"}`;
         }
         return feature;
-      })
+      });
 
       return updatedFeatures;
     });
@@ -63,13 +65,13 @@ const Features = ({ toggleAction, newFeature }) => {
 
   const toggleAc = () => {
     setFeatures((prevState) => {
-      const updatedFeatures = prevState.map(feature => {
+      const updatedFeatures = prevState.map((feature) => {
         if (feature.name === "Toggle AC") {
           feature.state = !feature.state;
-          feature.action = `Turn AC ${feature.state ? "off" : "on"}`
+          feature.action = `Turn AC ${feature.state ? "off" : "on"}`;
         }
         return feature;
-      })
+      });
 
       return updatedFeatures;
     });
@@ -109,7 +111,7 @@ const Features = ({ toggleAction, newFeature }) => {
 
 Features.propTypes = {
   toggleAction: PropTypes.func.isRequired,
-  newFeature: PropTypes.object
+  newFeature: PropTypes.object,
 };
 
 export default Features;

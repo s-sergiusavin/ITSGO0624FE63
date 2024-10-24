@@ -34,6 +34,8 @@ header {
 }
 
 .form {
+  width: 35rem;
+  margin: 0 auto;
   padding: 1rem;
   @include flexbox();
   flex-direction: column;
@@ -41,11 +43,5 @@ header {
 
   &.invalid {
     border: 1px solid red;
-  }
-
-  .control {
-    @include flexbox();
-    justify-content: space-between;
-    width: 20rem;
   }
 }

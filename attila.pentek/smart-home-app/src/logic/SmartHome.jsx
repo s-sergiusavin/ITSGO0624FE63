@@ -6,7 +6,7 @@ import Ac from "../ui/Ac";
 import PropTypes from "prop-types";
 
 const SmartHome = ({ newFeature }) => {
-  let [lightState, setLightState] = useState(true);
+  let [lightState, setLightState] = useState(false);
   let [acState, setAcState] = useState(false);
   let [dirtProgress, setDirtProgress] = useState({
     status: 0,

@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
-import buttonIcon from "./../assets/images/lights-icon.png";
-import buttonIconOff from "./../assets/images/lights-icon-off.png";
+import buttonIcon from "./../assets/images/lights-on.webp";
+import buttonIconOff from "./../assets/images/lights-off.jpg";
 import "./Feature.scss";
 import { useEffect, useState } from "react";
 

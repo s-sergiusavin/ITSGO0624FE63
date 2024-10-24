@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
+import MenuItem from "@mui/material/MenuItem";
 
 const FeaturesForm = ({ updateFeatureHandler }) => {
   const [isFormValid, setFormValid] = useState(true);
@@ -12,9 +13,20 @@ const FeaturesForm = ({ updateFeatureHandler }) => {
   const [stateField, setStateField] = useState(false);
   const [descriptionField, setDescriptionField] = useState("");
 
-  const [nameFieldError, setNameFieldError] = useState("false");
+  const [nameFieldError, setNameFieldError] = useState(false);
 
   const navigate = useNavigate();
+
+  const stateValues = [
+    {
+      value: true,
+      label: "👍🏼 True",
+    },
+    {
+      value: false,
+      label: "👎🏻 False",
+    },
+  ];
 
   const stateMethodDescription = (value) => {
     let example = value;
@@ -67,7 +79,9 @@ const FeaturesForm = ({ updateFeatureHandler }) => {
     event.preventDefault();
     checkValid();
 
-    // const descriptionValue = descriptionInputRef.current.value;
+    if (isFormValid) {
+      return;
+    }
 
     const newFeature = {
       name: nameField,
@@ -87,65 +101,61 @@ const FeaturesForm = ({ updateFeatureHandler }) => {
       noValidate
       onSubmit={submitHandler}
     >
-      <div className="control">
-        <TextField
-          error
-          id="title-outlined-error-helper-text"
-          label="Feature title"
-          value={nameField}
-          onChange={nameChangeHandler}
-          helperText={"Incorrect name."}
-          required
-        />
-        {/* <label htmlFor="title">Feature title</label>
-        <input
-          type="text"
-          id="title"
-          required
-          onChange={nameChangeHandler}
-          value={nameField}
-        /> */}
-      </div>
+      <TextField
+        error={nameFieldError}
+        id="title-outlined-error-helper-text"
+        label="Feature title"
+        value={nameField}
+        onChange={nameChangeHandler}
+        helperText={nameFieldError && "Incorrect name."}
+        fullWidth
+        required
+      />
 
-      <div className="control">
-        <TextField
-          error
-          id="action-outlined-error-helper-text"
-          label="Feature action"
-          value={actionField}
-          onChange={actionChangeHandler}
-          helperText={"Incorrect name."}
-          required
-        />
-      </div>
+      <TextField
+        error={nameFieldError}
+        id="action-outlined-error-helper-text"
+        label="Feature action"
+        value={actionField}
+        onChange={actionChangeHandler}
+        helperText={nameFieldError && "Incorrect name."}
+        fullWidth
+        required
+      />
 
-      <div className="control">
-        <label htmlFor="state">Feature state</label>
-        <select
-          id="state"
-          required
-          value={stateField}
-          onChange={(e) => setStateField(Boolean(e.target.value))}
-        >
-          <option value={true}>true</option>
-          <option value={false}>false</option>
-        </select>
-      </div>
+      <TextField
+        id="state-outlined-select-currency"
+        select
+        label="Select"
+        defaultValue="👎🏻 False"
+        helperText="Please select your default state!"
+        value={stateField}
+        onChange={(e) => setStateField(Boolean(e.target.value))}
+        fullWidth
+      >
+        {stateValues.map((option) => (
+          <MenuItem key={option.value} value={option.value}>
+            {option.label}
+          </MenuItem>
+        ))}
+      </TextField>
 
-      <div className="control">
-        <label htmlFor="description">Feature description</label>
-        <input
-          type="text"
-          id="description"
-          required
-          value={descriptionField}
-          onChange={(e) => setDescriptionField(e.target.value)}
-        />
-      </div>
+      <TextField
+        error={nameFieldError}
+        id="action-outlined-error-helper-text"
+        label="Feature description"
+        value={descriptionField}
+        onChange={(e) => setDescriptionField(e.target.value)}
+        helperText={nameFieldError && "Incorrect name."}
+        required
+        minRows={3}
+        fullWidth
+        multiline
+      />
 
       <div className="actions">
         <Button variant="contained" type="submit">
-          Add feature
+          Add Feature
         </Button>
       </div>
     </form>
